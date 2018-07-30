@@ -1,0 +1,334 @@
+<header class="page-header">
+  <div class="d-flex align-items-center">
+    <div class="mr-auto">
+      <h1 class="separator">Service</h1>
+      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="icon dripicons-home"></i></a></li>
+          <li class="breadcrumb-item"><a href="javascript:void(0)">Vehicle Fleet</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Service</li>
+        </ol>
+      </nav>
+    </div>
+    <ul class="actions top-right">
+      <li class="dropdown">
+        <button class="btn btn-secondary">Save</button>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="page-content container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <!--Basic Information-->
+          <div class="card">
+            <h5 class="card-header">Basic Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Product</label>
+                  <select id="" class="form-control">
+                    <option selected="">Vehicles</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Unit#</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Alternate ID:</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">VIN</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--In-Service Information-->
+          <div class="card">
+            <h5 class="card-header">In-Service Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>PO #</label>
+                   <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Owning Loc</label>
+                  <select  class="form-control">
+                     <option selected="">MAIN ST</option>
+                     <option>Auction</option>
+                     <option>D.TREE SNA</option>
+                     <option>LAX LOC</option>
+                     <option>LONG BEACH</option>
+                     <option>ONTARIO</option>
+                     <option>SNA IRVINE</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">In-Service Date</label>
+                  <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Invoice Date</label>
+                  <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>CLASS</label>
+                   <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label>In-Service Odometer</label>
+                  <input type="number" class="form-control" value="1" min="0">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Acquisition Price</label>
+                   <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Expected Delivery Loc</label>
+                  <select  class="form-control">
+                     <option selected="">MAIN ST</option>
+                     <option>Auction</option>
+                     <option>D.TREE SNA</option>
+                     <option>LAX LOC</option>
+                     <option>LONG BEACH</option>
+                     <option>ONTARIO</option>
+                     <option>SNA IRVINE</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>Progarm</label>
+                   <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label>Excise Tax</label>
+                 <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Expected Delivery Date</label>
+                   <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+                <div class="form-group col-md-1">
+                  <label for=""></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="">
+                    <label class="form-check-label" for="">
+                      Buy Back
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Owning Area</label>
+                   <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>Warranty Term</label>
+                   <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Expected In-Service Date</label>
+                  <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">CO2 Value</label>
+                   <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Tracking Device</label>
+                  <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label>Delivery loc</label>
+                   <select  class="form-control">
+                     <option selected="">MAIN ST</option>
+                     <option>Auction</option>
+                     <option>D.TREE SNA</option>
+                     <option>LAX LOC</option>
+                     <option>LONG BEACH</option>
+                     <option>ONTARIO</option>
+                     <option>SNA IRVINE</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Delivery Date</label>
+                  <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Inspection Date</label>
+                  <input type="text" class="form-control date-picker-input" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">P11D Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label>Comments</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <!--Disposal Information-->
+          <div class="card">
+            <h5 class="card-header">Disposal Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="">Grounding Miles / Date</label>
+                  <input type="number" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label> &nbsp;</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Min Keep Miles / Date</label>
+                  <input type="text" class="form-control " id="" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label> &nbsp;</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Max Keep Miles / Date</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label> &nbsp;</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Actual Out Of Fleet Information-->
+          <div class="card">
+            <h5 class="card-header">Actual Out Of Fleet Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="">Out Of Fleet Date</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Date Sold</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Sales Price</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Sold To</label>
+                  <input type="text" min="0" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Post Date</label>
+                  <input type="text" min="0" class="form-control" disabled >
+                </div>
+                <div class="form-group col-md-2">
+                  <label for=""></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="">
+                    <label class="form-check-label" for="">
+                      List For Internet Sale
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Remarketing-->
+          <div class="card">
+            <h5 class="card-header">Remarketing</h5>
+            <div class="card-body">
+              <p>Value Guid 1:</p>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Retail Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Wholesale Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled >
+                </div>
+              </div>
+              <p>Value Guid 2:</p>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Retail Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Wholesale Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled >
+                </div>
+              </div>
+              <p>For Sale Price:</p>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Retail Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Wholesale Value</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Changed</label>
+                  <input type="text" class="form-control" disabled >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="">Condition Rpt</label>
+                  <input type="text" class="form-control" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-12">
+                  <label for="">Comments</label>
+                  <textarea class="form-control" rows="3"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</section>

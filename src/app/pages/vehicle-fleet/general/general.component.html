@@ -1,0 +1,409 @@
+<header class="page-header">
+  <div class="d-flex align-items-center">
+    <div class="mr-auto">
+      <h1 class="separator">General</h1>
+      <nav class="breadcrumb-wrapper" aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html"><i class="icon dripicons-home"></i></a></li>
+          <li class="breadcrumb-item"><a href="javascript:void(0)">Vehicle Fleet</a></li>
+          <li class="breadcrumb-item active" aria-current="page">General</li>
+        </ol>
+      </nav>
+    </div>
+    <ul class="actions top-right">
+      <li class="dropdown">
+        <button class="btn btn-secondary">Save</button>
+      </li>
+    </ul>
+  </div>
+</header>
+<section class="page-content container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <form>
+          <!--Basic Information-->
+          <div class="card">
+            <h5 class="card-header">Basic Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Product</label>
+                  <select id="" class="form-control">
+                    <option selected="">Vehicles</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Unit#</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Alternate ID:</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">VIN</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Current Status-->
+          <div class="card">
+            <h5 class="card-header">Current Status</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Status</label>
+                   <select id="" class="form-control">
+                     <option selected="">Available</option>
+                     <option>Out Of Service</option>
+                     <option>For Sale</option>
+                     <option>Sold</option>
+                     <option>Stolen</option>
+                     <option>Unknown</option>
+                     <option>Grounded</option>
+                     <option>O/S Problem</option>
+                     <option>O/S Repair</option>
+                     <option>Non-Revenue</option>
+                     <option>OEM Grounding</option>
+                     <option>Grounded For Sale</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Location</label>
+                  <select id="" class="form-control">
+                     <option selected="">MAIN ST</option>
+                     <option>Auction</option>
+                     <option>D.TREE SNA</option>
+                     <option>LAX LOC</option>
+                     <option>LONG BEACH</option>
+                     <option>ONTARIO</option>
+                     <option>SNA IRVINE</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="">Odometer</label>
+                  <input type="number" class="form-control" id="" value="1">
+                </div>
+                <div class="form-group col-md-1">
+                  <label for=""></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="">
+                    <label class="form-check-label" for="">
+                      Est.
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Current Fuel Level  &nbsp;&nbsp;&nbsp;  {{sliderRange}}/8ths</label>
+                  <input type="range" class="custom-range" min="0" max="8" step="1" [(ngModel)]="sliderRange" name="fuel" >
+                  <div class="form-row text-muted" style="padding-left: 4px">
+                      <div class="col">
+                        0
+                      </div>
+                      <div class="col">
+                        1
+                      </div>
+                      <div class="col">
+                        2
+                      </div>
+                      <div class="col">
+                        3
+                      </div>
+                      <div class="col">
+                        4
+                      </div>
+                      <div class="col">
+                        5
+                      </div>
+                      <div class="col">
+                        6
+                      </div>
+                      <div class="col">
+                        7
+                      </div>
+                      <div class="col">
+                        8
+                      </div>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Vehicle Information-->
+          <div class="card">
+            <h5 class="card-header">Vehicle Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Year</label>
+                  <input type="number" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Make</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Model Code</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Model</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Class</label>
+                  <select id="" class="form-control">
+                    <option selected=""></option>
+                    <option>SFAR</option>
+                    <option>SHUTTLE</option>
+                    <option>ECAR</option>
+                    <option>CCAR</option>
+                    <option>CFAR</option>
+                    <option>FFAR</option>
+                    <option>FVAR</option>
+                    <option>ICAR</option>
+                    <option>IFAR</option>
+                    <option>LCAR</option>
+                    <option>LTAR</option>
+                    <option>MCAR</option>
+                    <option>MINI</option>
+                    <option>MVAR</option>
+                    <option>PTAR</option>
+                    <option>SCAR</option>
+                    <option>SPAR</option>
+                    <option>STAR</option>
+                    <option>XFAR</option>
+                    <option>XSAR</option>
+                    <option>FCAR</option>
+
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Trim Line</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Ext. Color Code</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Ext. Color</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Image</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-1">
+                  <label for="">Capacity</label>
+                  <input type="number" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-1">
+                  <label for="">Doors</label>
+                  <input type="number" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-1">
+                  <label for=""></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="">
+                    <label class="form-check-label" for="">
+                      Smoking
+                    </label>
+                  </div>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Int. Color Code</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Int. Color</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Engine</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Transmission</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Drivetrain</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Description</label>
+                  <input type="text" class="form-control" id="" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Fuel Information-->
+          <div class="card">
+            <h5 class="card-header">Fuel Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Type</label>
+                  <select id="" class="form-control">
+                    <option selected="">Fuel</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Tank Size</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Fuel Economy</label>
+                  <input type="number" class="form-control" min="0" id="" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Fuel Charged By Distance Ceiling</label>
+                  <input type="number" min="0" class="form-control" id="" >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--License Information-->
+          <div class="card">
+            <h5 class="card-header">License Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Lic. #</label>
+                  <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">St</label>
+                  <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Exp. Date</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Lic. Amount</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" id="" >
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Reg. #</label>
+                  <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">VLF Amt</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">First Reg</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Date Posted</label>
+
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Key Codes-->
+          <div class="card">
+            <h5 class="card-header">Key Codes</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="">Ignition</label>
+                  <input type="text" class="form-control" >
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Trunk</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" >
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Misc</label>
+                  <input type="text" class="form-control date-picker-input" placeholder="Select Date">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Due Back Information-->
+          <div class="card">
+            <h5 class="card-header">Due Back Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="">Location</label>
+                  <select class="form-control" disabled>
+                    <option selected=""></option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">Date</label>
+                  <input type="number" step='0.01' value='0.00' placeholder='0.00' min="0" class="form-control" disabled >
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="">RA #</label>
+                  <input type="text" class="form-control " disabled >
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Available Option-->
+          <div class="card">
+            <h5 class="card-header">Available Option</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">1</label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Last Movemont-->
+          <div class="card">
+            <h5 class="card-header">Last Movemont</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-3">
+                  <label for="">Date</label>
+                  <input type="text" class="form-control" [(ngModel)]="currentDate" name="currentDate" disabled>
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Time</label>
+                  <input type="text" [(ngModel)]="currentTime" class="form-control" disabled name="currentTime">
+                </div>
+                <div class="form-group col-md-3">
+                  <label for="">Master MRU</label>
+                  <input type="text" class="form-control " disabled >
+                </div>
+                <div class="form-group col-md-1">
+                  <label for=""></label>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="">
+                    <label class="form-check-label" for="">
+                      MRU Flag
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+</section>
