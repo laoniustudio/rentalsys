@@ -1,0 +1,17 @@
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+  border: 1px solid rgba(234, 243, 253, 0.9);
+  padding: .75rem;
+}
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+    padding: .75rem;
+}

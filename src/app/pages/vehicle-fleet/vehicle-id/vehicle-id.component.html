@@ -1,0 +1,51 @@
+<form (ngSubmit)="save(infoForm)" #infoForm="ngForm">
+  <ul class="actions top-right">
+								<li class="dropdown">
+									        <button type="submit" class="btn btn-secondary">Save</button>
+
+								</li>
+							</ul>
+  <section class="page-content container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+          <!--Basic Information-->
+          <div class="card">
+            <h5 class="card-header">Basic Information</h5>
+            <div class="card-body">
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label>Product</label>
+                  <select class="form-control">
+                    <option selected="">Vehicles</option>
+                    <option>...</option>
+                  </select>
+                </div>
+                <div class="form-group col-md-2">
+                  <label>Unit#</label>
+                  <input type="text" class="form-control" name="unit" [ngModel]="info?.unit">
+                </div>
+                <div class="form-group col-md-2">
+                  <label>License #:</label>
+                  <input type="text" class="form-control" name="license_no" [ngModel]="info?.license_no" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label>VIN</label>
+                  <input type="text" class="form-control" name="vin" [ngModel]="info?.vin" >
+                </div>
+                <div class="form-group col-md-2">
+                  <label>Class</label>
+                  <select name="vehicle_class"  [ngModel]="info?.vehicle_class" class="form-control">
+                    <option *ngFor="let vclass of vehicle_class" selected="">{{vclass}}</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      <div class="col-md-12">
+              <button type="submit" class="btn btn-secondary">Save</button>
+      </div>
+    </div>
+  </section>
+</form>
+
