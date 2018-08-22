@@ -20,6 +20,7 @@ export class NewVehicleGuard implements CanActivate {
     if (IdsInfo ? IdsInfo.pk : IdsInfo) {
       return true;
     } else {
+      console.log(next)
       return false;
     }
   }
