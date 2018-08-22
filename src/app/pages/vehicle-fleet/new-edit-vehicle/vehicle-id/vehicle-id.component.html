@@ -1,4 +1,4 @@
-<form (ngSubmit)="save(infoForm)" #infoForm="ngForm">
+<form ngNativeValidate (ngSubmit)="save(infoForm)" #infoForm="ngForm">
   <ul class="actions top-right">
 								<li class="dropdown">
 									        <button type="submit" class="btn btn-secondary">Save</button>
@@ -22,19 +22,19 @@
                 </div>
                 <div class="form-group col-md-2">
                   <label>Unit#</label>
-                  <input type="text" class="form-control" name="unit" [ngModel]="info?.unit">
+                  <input type="text" required class="form-control" name="unit" [ngModel]="info?.unit">
                 </div>
                 <div class="form-group col-md-2">
                   <label>License #:</label>
-                  <input type="text" class="form-control" name="license_no" [ngModel]="info?.license_no" >
+                  <input type="text" required class="form-control" name="license_no" [ngModel]="info?.license_no" >
                 </div>
                 <div class="form-group col-md-2">
                   <label>VIN</label>
-                  <input type="text" class="form-control" name="vin" [ngModel]="info?.vin" >
+                  <input type="text" required class="form-control" name="vin" [ngModel]="info?.vin" >
                 </div>
                 <div class="form-group col-md-2">
                   <label>Class</label>
-                  <select name="vehicle_class"  [ngModel]="info?.vehicle_class" class="form-control">
+                  <select name="vehicle_class" required [ngModel]="info?.vehicle_class" class="form-control">
                     <option *ngFor="let vclass of vehicle_class" selected="">{{vclass}}</option>
                   </select>
                 </div>

@@ -5,16 +5,19 @@ import {GeneralSrvService} from '../../../services/general-srv.service';
 declare var $: any;
 @Component({
   selector: 'app-new-vehicle',
-  templateUrl: './new-vehicle.component.html',
-  styleUrls: ['./new-vehicle.component.css']
+  templateUrl: './new-edit-vehicle.component.html',
+  styleUrls: ['./new-edit-vehicle.component.css']
 })
-export class NewVehicleComponent implements OnInit {
+export class NewEditVehicleComponent implements OnInit {
   constructor(private router: Router, private http: HttpSrvService,
               private gSrv: GeneralSrvService) { }
 
   ngOnInit() {
     this.setNavToggle();
   }
+  /**
+   * init nav menu toggle class style
+   * */
   setNavToggle() {
      this.router.events.subscribe((event) => {
           if (event instanceof NavigationEnd ) {

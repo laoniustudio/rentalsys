@@ -6,14 +6,14 @@ import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { LeftNavComponent } from './comps/left-nav/left-nav.component';
 import { TopNavComponent } from './comps/top-nav/top-nav.component';
 import {SjrouterModule} from "./sjrouter/sjrouter.module";
-import { GeneralComponent } from './pages/vehicle-fleet/general/general.component';
-import { ServiceComponent } from './pages/vehicle-fleet/service/service.component';
-import { FinanceComponent } from './pages/vehicle-fleet/finance/finance.component';
+import { GeneralComponent } from './pages/vehicle-fleet/new-edit-vehicle/general/general.component';
+import { ServiceComponent } from './pages/vehicle-fleet/new-edit-vehicle/service/service.component';
+import { FinanceComponent } from './pages/vehicle-fleet/new-edit-vehicle/finance/finance.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ListingComponent } from './pages/vehicle-fleet/listing/listing.component';
-import { NewVehicleComponent } from './pages/vehicle-fleet/new-vehicle/new-vehicle.component';
+import { NewEditVehicleComponent } from './pages/vehicle-fleet/new-edit-vehicle/new-edit-vehicle.component';
 import {HttpClientModule} from '@angular/common/http';
-import { VehicleIdComponent } from './pages/vehicle-fleet/vehicle-id/vehicle-id.component';
+import { VehicleIdComponent } from './pages/vehicle-fleet/new-edit-vehicle/vehicle-id/vehicle-id.component';
 import {RouteReuseStrategy} from '@angular/router';
 import {SJReuseStrategy} from './sjrouter/SJReuseStrategy';
 import {MatTableModule} from '@angular/material/table';
@@ -30,7 +30,7 @@ import {MatSortModule} from '@angular/material/sort';
     ServiceComponent,
     FinanceComponent,
     ListingComponent,
-    NewVehicleComponent,
+    NewEditVehicleComponent,
     VehicleIdComponent
   ],
   imports: [

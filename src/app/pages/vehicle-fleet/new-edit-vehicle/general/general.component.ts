@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpSrvService} from '../../../services/http-srv.service';
+import {HttpSrvService} from '../../../../services/http-srv.service';
 import {NgForm} from '@angular/forms';
-import {LabelSrvService} from '../../../services/label-srv.service';
+import {LabelSrvService} from '../../../../services/label-srv.service';
 import {VehicleIdComponent} from '../vehicle-id/vehicle-id.component';
-import {VehicleSrvService} from '../../../services/vehicle-srv.service';
+import {VehicleSrvService} from '../../../../services/vehicle-srv.service';
 declare var $: any;
 @Component({
   selector: 'app-general',

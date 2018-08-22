@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpSrvService} from '../../../services/http-srv.service';
+import {HttpSrvService} from '../../../../services/http-srv.service';
 import {NgForm} from '@angular/forms';
-import {LabelSrvService} from '../../../services/label-srv.service';
-import {VehicleSrvService} from '../../../services/vehicle-srv.service';
+import {LabelSrvService} from '../../../../services/label-srv.service';
+import {VehicleSrvService} from '../../../../services/vehicle-srv.service';
 import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Route, Router} from '@angular/router';
 declare var $: any;
 @Component({
