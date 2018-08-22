@@ -1,5 +1,5 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
-import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {VehicleSrvService} from '../../../services/vehicle-srv.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {HttpSrvService} from '../../../services/http-srv.service';
@@ -53,7 +53,7 @@ export class ListingComponent implements OnInit {
   getVehicles() {
     this.http.httpGet('/vehicles/vehicle_list/').subscribe(
       (data: UserData[]) => {
-        console.log(data)
+        console.log(data);
         this.dataSource = new MatTableDataSource(data);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;

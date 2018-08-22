@@ -12,7 +12,7 @@ import {VehicleIdComponent} from '../pages/vehicle-fleet/vehicle-id/vehicle-id.c
 const appRoutes: Routes = [
   { path: '', component: ListingComponent},
   { path: 'dashboard', component: DashboardComponent},
-  { path: 'vehicles', component: ListingComponent},
+  { path: 'vehicleListing', component: ListingComponent},
   { path: 'new_vehicle', component: NewVehicleComponent,
     children: [
       { path: 'ids', component: VehicleIdComponent},
