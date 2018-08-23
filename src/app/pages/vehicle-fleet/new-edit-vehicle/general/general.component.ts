@@ -3,7 +3,7 @@ import {HttpSrvService} from '../../../../services/http-srv.service';
 import {NgForm} from '@angular/forms';
 import {LabelSrvService} from '../../../../services/label-srv.service';
 import {VehicleIdComponent} from '../vehicle-id/vehicle-id.component';
-import {VehicleSrvService} from '../../../../services/vehicle-srv.service';
+import {VehicleSrvService} from '../../../../services/vehicle/vehicle-srv.service';
 declare var $: any;
 @Component({
   selector: 'app-general',
@@ -24,7 +24,7 @@ export class GeneralComponent implements OnInit {
     this.datepickerCreate();
     this.getDate();
     this.info = this.vehicleSrv.generalInfo;
-     this.http.httpGet('/vehicles/general_edit/' + this.vehicleSrv.vehicleId).subscribe(
+     this.http.httpGet('/vehicles/general_edit/' + this.vehicleSrv.iDsInfo.pk).subscribe(
        (data) => {
          console.log(data);
          this.info = data;
@@ -70,9 +70,9 @@ export class GeneralComponent implements OnInit {
     // add missed date info
     form.value['first_reg'] = $('#first_reg').val();
     form.value['license_expire'] = $('#license_expire').val();
-    form.value['ids'] = this.vehicleSrv.vehicleId;
+    form.value['ids'] = this.vehicleSrv.iDsInfo.pk;
     this.vehicleSrv.generalInfo = form.value;
-    const req = this.vehicleSrv.getEditOrNewUrl('/vehicles/info/', '/vehicles/general_edit/', form.value);
+    const req = this.vehicleSrv.createOrUpdate('/vehicles/info/', '/vehicles/general_edit/', form.value);
     // http request
     req.subscribe(
       (data) => {

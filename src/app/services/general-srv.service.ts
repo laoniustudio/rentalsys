@@ -7,15 +7,15 @@ export class GeneralSrvService {
 
   constructor() { }
    /**
-   * Def: Add or remove class on element
-   * Add: element id: like #jjj .jjj
-   * remove: Array off element ids
-   * class name : name of the class you want to add or remove
+   * Def: on selection switch between element's select css style
+   * element: class tags to identify element
+   * classAdd: class style to add
+   * classRemove : class style to remove
    * */
-  classToggle(add: string, remove: Array<string>, className: string) {
-    $(add).addClass(className);
-    for (const re of remove) {
-      $(re).removeClass(className);
-    }
-  }
+   selectStyleSwitch(element: string, classAdd: string, classRemove: string) {
+     $(element).click(function() {
+        $(element).removeClass(classRemove);
+        $(this).addClass(classAdd);
+      });
+   }
 }

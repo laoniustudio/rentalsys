@@ -1,6 +1,6 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {VehicleSrvService} from '../../../services/vehicle-srv.service';
+import {VehicleSrvService} from '../../../services/vehicle/vehicle-srv.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {HttpSrvService} from '../../../services/http-srv.service';
 import {VehicleIdInfo} from "../../../utility/interfaces/vehicles";
@@ -42,12 +42,8 @@ export class ListingComponent implements OnInit {
    * Nav to New Vehicle
    * */
   newVehicle() {
-    this.vehicleSrv.vehicleId = null;
-    this.vehicleSrv.serviceInfo  = null;
-    this.vehicleSrv.generalInfo = null;
-    this.vehicleSrv.iDsInfo = null;
-    this.vehicleSrv.newVehicle = true;
-    this.router.navigate(['/new_vehicle/ids']);
+    this.vehicleSrv.clearAllInfos();
+    this.router.navigate(['/vehicle/new/ids']);
   }
   /**
    * Get all vehicle infos
@@ -67,9 +63,7 @@ export class ListingComponent implements OnInit {
   /**
    * Edit each vehicle
    * */
-  edit(vehicle_id: number) {
-    this.vehicleSrv.vehicleId = vehicle_id;
-    this.vehicleSrv.newVehicle = false;
-    this.router.navigate(['/new_vehicle/ids']);
+  edit(vehicle_pk: number) {
+    this.router.navigate(['/vehicle/edit/ids'], {queryParams: {pk: vehicle_pk}});
   }
 }

@@ -14,13 +14,20 @@ const appRoutes: Routes = [
   { path: '', component: ListingComponent},
   { path: 'dashboard', component: DashboardComponent},
   { path: 'vehicleListing', component: ListingComponent},
-  { path: 'new_vehicle', component: NewEditVehicleComponent,
-    children: [
+  { path: 'vehicle', children: [
+    { path: 'new', component: NewEditVehicleComponent, children: [
       { path: 'ids', component: VehicleIdComponent},
       { path: 'general', component: GeneralComponent, canActivate: [NewVehicleGuard]},
       { path: 'service', component: ServiceComponent, canActivate: [NewVehicleGuard]},
       { path: 'finance', component: FinanceComponent, canActivate: [NewVehicleGuard]},
     ]},
+    { path: 'edit', component: NewEditVehicleComponent, children: [
+      { path: 'ids', component: VehicleIdComponent},
+      { path: 'general', component: GeneralComponent},
+      { path: 'service', component: ServiceComponent},
+      { path: 'finance', component: FinanceComponent},
+    ]},
+  ]},
 ];
 @NgModule({
   imports: [

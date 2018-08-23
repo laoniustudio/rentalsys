@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
-import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild} from '@angular/router';
+import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild, NavigationEnd, Router} from '@angular/router';
 import { Observable } from 'rxjs';
-import {VehicleSrvService} from "../../services/vehicle-srv.service";
+import {VehicleSrvService} from "../../services/vehicle/vehicle-srv.service";
 import {VehicleIdInfo} from "../interfaces/vehicles";
+import {GeneralSrvService} from '../../services/general-srv.service';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,8 @@ import {VehicleIdInfo} from "../interfaces/vehicles";
  * cause need to get pk of the new vehicle
  * */
 export class NewVehicleGuard implements CanActivate {
-  constructor(private vehicleSrv: VehicleSrvService) {}
+  constructor(private vehicleSrv: VehicleSrvService, private router: Router,
+              private gSrv: GeneralSrvService) {}
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
