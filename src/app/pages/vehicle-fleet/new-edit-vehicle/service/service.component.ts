@@ -18,7 +18,7 @@ export class ServiceComponent implements OnInit {
   ngOnInit() {
     this.datepickerCreate();
     this.info = this.vehicleSrv.serviceInfo;
-     this.http.httpGet('/vehicles/service_edit/' + this.vehicleSrv.iDsInfo.pk).subscribe(
+     this.http.httpGet('/vehicles/service_edit/' + this.vehicleSrv.iDsInfo.id).subscribe(
        (data) => {
          console.log(data);
          this.info = data;
@@ -44,16 +44,16 @@ export class ServiceComponent implements OnInit {
     form.value['insepection_date'] = $('#insepection_date').val();
     form.value['out_fleet_date'] = $('#out_fleet_date').val();
     form.value['date_sold'] = $('#date_sold').val();
-    form.value['ids'] = this.vehicleSrv.iDsInfo.pk;
+    form.value['ids'] = this.vehicleSrv.iDsInfo.id;
     this.vehicleSrv.serviceInfo = form.value;
-    const req = this.vehicleSrv.createOrUpdate('/vehicles/service/', '/vehicles/service_edit/', form.value);
-    req.subscribe(
-      (data) => {
-        console.log(data)
-      },
-      (error) => {
-        console.log(error);
-      });
+    //const req = this.vehicleSrv.createOrUpdate('/vehicles/service/', '/vehicles/service_edit/', form.value);
+    // req.subscribe(
+    //   (data) => {
+    //     console.log(data)
+    //   },
+    //   (error) => {
+    //     console.log(error);
+    //   });
 
   }
 }

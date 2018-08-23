@@ -9,6 +9,7 @@ import {NewEditVehicleComponent} from '../pages/vehicle-fleet/new-edit-vehicle/n
 import {DashboardComponent} from '../pages/dashboard/dashboard.component';
 import {VehicleIdComponent} from '../pages/vehicle-fleet/new-edit-vehicle/vehicle-id/vehicle-id.component';
 import {NewVehicleGuard} from "../utility/guards/guards.guard";
+import {VehicleAllResService} from "../services/vehicle/vehicle-res.service";
 
 const appRoutes: Routes = [
   { path: '', component: ListingComponent},
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
       { path: 'finance', component: FinanceComponent, canActivate: [NewVehicleGuard]},
     ]},
     { path: 'edit', component: NewEditVehicleComponent, children: [
-      { path: 'ids', component: VehicleIdComponent},
+      { path: 'ids', component: VehicleIdComponent, resolve: {vehicleAll: VehicleAllResService}},
       { path: 'general', component: GeneralComponent},
       { path: 'service', component: ServiceComponent},
       { path: 'finance', component: FinanceComponent},

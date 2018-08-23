@@ -64,6 +64,6 @@ export class ListingComponent implements OnInit {
    * Edit each vehicle
    * */
   edit(vehicle_pk: number) {
-    this.router.navigate(['/vehicle/edit/ids'], {queryParams: {pk: vehicle_pk}});
+    this.router.navigate(['/vehicle/edit/ids'], {queryParams: {id: vehicle_pk}});
   }
 }

@@ -1,15 +1,21 @@
 import { Injectable } from '@angular/core';
-import {ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
-import {VehicleIdInfo} from '../../utility/interfaces/vehicles';
+import {ActivatedRoute, ActivatedRouteSnapshot, Resolve, RouterStateSnapshot} from '@angular/router';
+import {VehicleAllInfo} from '../../utility/interfaces/vehicles';
 import {Observable} from 'rxjs';
+import {HttpSrvService} from "../http-srv.service";
 
 @Injectable({
   providedIn: 'root'
 })
-export class VehicleEditResService implements Resolve<VehicleIdInfo> {
+export class VehicleAllResService implements Resolve<VehicleAllInfo> {
 
-  constructor() { }
-  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<VehicleIdInfo> {
-    return
+  constructor(private activedRoute: ActivatedRoute, private http: HttpSrvService) { }
+  resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<VehicleAllInfo> {
+    this.activedRoute.queryParams.subscribe(
+      (params) => {
+        if (params['id']) {
+          return this.http.httpGet('/vehicles/vehicle_detail/' + params['id']);
+        }
+      });
   }
 }

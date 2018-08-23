@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import {ActivatedRoute, ActivatedRouteSnapshot, NavigationEnd, Router} from '@angular/router';
 import {HttpSrvService} from '../http-srv.service';
 import {GeneralInfo, ServiceInfo, VehicleIdInfo} from '../../utility/interfaces/vehicles';
-import {Subject} from 'rxjs';
+import {Observable, Subject} from 'rxjs';
+import {isUndefined} from "util";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,6 @@ export class VehicleSrvService {
   serviceInfo: ServiceInfo;
   // --------------
   switchStyle = new Subject<any>();
-  newVehicle: boolean; // flag to create a new vehicle or edit the old one
   constructor(private router: Router, private activatedRoute: ActivatedRoute,
               private http: HttpSrvService) { }
 
@@ -27,11 +27,16 @@ export class VehicleSrvService {
   /**
    * post new or update vehicle info to server
    * */
-  createOrUpdate(createUrl: string, updateUrl: string, payload: {}) {
-    if (this.newVehicle) {
-      return this.http.httpPost(createUrl, payload);
-    } else {
-      return this.http.httpPut(updateUrl + this.iDsInfo.pk, payload);
+  createOrUpdate(newVehicle: boolean, url: string, payload: {}) {
+      if (newVehicle) {
+        return this.http.httpPost(url, payload);
+      } else {
+        return this.http.httpPut(url + this.iDsInfo.id, payload);
+      }
+  }
+  fetchVehicleAllInfo() {
+    this.http.httpGet('/vehicles/vehicle_detail/11') {
+
     }
   }
   /**

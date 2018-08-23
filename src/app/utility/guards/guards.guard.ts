@@ -19,7 +19,7 @@ export class NewVehicleGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     const IdsInfo: VehicleIdInfo = this.vehicleSrv.iDsInfo;
-    if (IdsInfo ? IdsInfo.pk : IdsInfo) {
+    if (IdsInfo ? IdsInfo.id : IdsInfo) {
       return true;
     } else {
       console.log(next)

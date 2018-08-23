@@ -1,5 +1,5 @@
 export interface VehicleIdInfo {
-  pk: number;
+  id: number;
   unit: string;
   vin: string;
   license_no: string;
@@ -80,4 +80,9 @@ export interface ServiceInfo {
     sold_to: string;
     sold_post_date: string;
     internet_sale: boolean;
+}
+
+export interface VehicleAllInfo extends VehicleIdInfo {
+    vehicle_info: GeneralInfo;
+    vehicle_service: ServiceInfo;
 }
