@@ -1,5 +1,5 @@
 export interface VehicleIdInfo {
-  id: number;
+  id: string;
   unit: string;
   vin: string;
   license_no: string;

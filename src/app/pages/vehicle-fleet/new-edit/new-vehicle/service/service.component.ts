@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {LabelSrvService} from '../../../../services/label-srv.service';
-import {VehicleSrvService} from '../../../../services/vehicle/vehicle-srv.service';
+import {LabelSrvService} from '../../../../../services/label-srv.service';
+import {VehicleSrvService} from '../../../../../services/vehicle/vehicle-srv.service';
 import {NgForm} from '@angular/forms';
-import {HttpSrvService} from '../../../../services/http-srv.service';
+import {HttpSrvService} from '../../../../../services/http-srv.service';
+import {ActivatedRoute} from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-service',
@@ -13,19 +14,19 @@ export class ServiceComponent implements OnInit {
   info: {};
   location: Array<string> = this.labelSrv.location;
   constructor(private labelSrv: LabelSrvService, private vehicleSrv: VehicleSrvService,
-              private http: HttpSrvService) { }
+              private http: HttpSrvService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.datepickerCreate();
-    this.info = this.vehicleSrv.serviceInfo;
-     this.http.httpGet('/vehicles/service_edit/' + this.vehicleSrv.iDsInfo.id).subscribe(
-       (data) => {
-         console.log(data);
-         this.info = data;
-       },
-       (error) => {
-          console.log(error);
-       });
+    // this.info = this.vehicleSrv.serviceInfo;
+    //  this.http.httpGet('/vehicles/service_edit/' + this.vehicleSrv.iDsInfo.id).subscribe(
+    //    (data) => {
+    //      console.log(data);
+    //      this.info = data;
+    //    },
+    //    (error) => {
+    //       console.log(error);
+    //    });
   }
   /**
   * Datepicker init
@@ -44,16 +45,9 @@ export class ServiceComponent implements OnInit {
     form.value['insepection_date'] = $('#insepection_date').val();
     form.value['out_fleet_date'] = $('#out_fleet_date').val();
     form.value['date_sold'] = $('#date_sold').val();
-    form.value['ids'] = this.vehicleSrv.iDsInfo.id;
-    this.vehicleSrv.serviceInfo = form.value;
-    //const req = this.vehicleSrv.createOrUpdate('/vehicles/service/', '/vehicles/service_edit/', form.value);
-    // req.subscribe(
-    //   (data) => {
-    //     console.log(data)
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   });
+    const pk = this.activeRoute.snapshot.paramMap.get('id');
+    form.value['ids'] = pk;
+    this.vehicleSrv.vehicleAllInfo.vehicle_service = form.value;
 
   }
 }

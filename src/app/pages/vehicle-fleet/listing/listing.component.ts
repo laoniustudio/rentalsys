@@ -4,6 +4,7 @@ import {VehicleSrvService} from '../../../services/vehicle/vehicle-srv.service';
 import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {HttpSrvService} from '../../../services/http-srv.service';
 import {VehicleIdInfo} from "../../../utility/interfaces/vehicles";
+import {GeneralSrvService} from '../../../services/general-srv.service';
 
 @Component({
   selector: 'app-listing',
@@ -18,7 +19,8 @@ export class ListingComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(private router: Router, private route: ActivatedRoute,
-              private vehicleSrv: VehicleSrvService, private http: HttpSrvService
+              private vehicleSrv: VehicleSrvService, private http: HttpSrvService,
+              private gSrv: GeneralSrvService
               ) {
   }
 
@@ -42,7 +44,6 @@ export class ListingComponent implements OnInit {
    * Nav to New Vehicle
    * */
   newVehicle() {
-    this.vehicleSrv.clearAllInfos();
     this.router.navigate(['/vehicle/new/ids']);
   }
   /**
@@ -64,6 +65,7 @@ export class ListingComponent implements OnInit {
    * Edit each vehicle
    * */
   edit(vehicle_pk: number) {
-    this.router.navigate(['/vehicle/edit/ids'], {queryParams: {id: vehicle_pk}});
+    this.gSrv.loadingStyleToggle();
+    this.router.navigate(['/vehicle/edit/ids/' + vehicle_pk], );
   }
 }

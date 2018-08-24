@@ -3,13 +3,13 @@
       <div class="mr-auto">
         <ul class="nav nav-pills nav-pills-primary mb-3" id="pills-demo-1" role="tablist">
           <li class="nav-item">
-            <a class="nav-link active show" routerLink="ids">IDs</a>
+            <a class="nav-link active show" [routerLink]="pk? 'ids/' + pk : 'ids'">IDs</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link"  routerLink="general">General</a>
+            <a class="nav-link"  [routerLink]="pk? 'general/' + pk : 'general'" >General</a>
           </li>
           <li class="nav-item" >
-            <a class="nav-link" routerLink="service">Service</a>
+            <a class="nav-link" [routerLink]="pk? 'service/' + pk : 'service'">Service</a>
           </li>
         </ul>
       </div>

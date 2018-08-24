@@ -18,4 +18,14 @@ export class GeneralSrvService {
         $(this).addClass(classAdd);
       });
    }
+   /**
+   * show or close loading circle style
+   * */
+   loadingStyleToggle(id: string = '#loading') {
+     if ($(id).hasClass('qt-loader')) {
+       $(id).removeClass('qt-loader qt-loader-mini qt-loader-right');
+     } else {
+       $(id).addClass('qt-loader qt-loader-mini qt-loader-right');
+     }
+   }
 }

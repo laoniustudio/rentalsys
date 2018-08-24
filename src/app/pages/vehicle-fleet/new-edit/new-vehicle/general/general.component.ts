@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import {HttpSrvService} from '../../../../services/http-srv.service';
+import {HttpSrvService} from '../../../../../services/http-srv.service';
 import {NgForm} from '@angular/forms';
-import {LabelSrvService} from '../../../../services/label-srv.service';
+import {LabelSrvService} from '../../../../../services/label-srv.service';
 import {VehicleIdComponent} from '../vehicle-id/vehicle-id.component';
-import {VehicleSrvService} from '../../../../services/vehicle/vehicle-srv.service';
+import {VehicleSrvService} from '../../../../../services/vehicle/vehicle-srv.service';
+import {ActivatedRoute} from '@angular/router';
 declare var $: any;
 @Component({
   selector: 'app-general',
@@ -18,20 +19,20 @@ export class GeneralComponent implements OnInit {
   vehicle_class: Array<string> = this.labelSrv.verhicle_class; // for front class selection
   vehicle_status: Array<string> = this.labelSrv.vehicle_status; // for front status selection
   constructor(private labelSrv: LabelSrvService, private http: HttpSrvService,
-              private vehicleSrv: VehicleSrvService) { }
+              private vehicleSrv: VehicleSrvService, private activeRoute: ActivatedRoute) { }
 
   ngOnInit() {
     this.datepickerCreate();
     this.getDate();
-    this.info = this.vehicleSrv.generalInfo;
-     this.http.httpGet('/vehicles/general_edit/' + this.vehicleSrv.iDsInfo.id).subscribe(
-       (data) => {
-         console.log(data);
-         this.info = data;
-       },
-       (error) => {
-          console.log(error);
-       });
+    // this.info = this.vehicleSrv.generalInfo;
+    //  this.http.httpGet('/vehicles/general_edit/' + this.vehicleSrv.iDsInfo.id).subscribe(
+    //    (data) => {
+    //      console.log(data);
+    //      this.info = data;
+    //    },
+    //    (error) => {
+    //       console.log(error);
+    //    });
 
   }
   /**
@@ -70,16 +71,8 @@ export class GeneralComponent implements OnInit {
     // add missed date info
     form.value['first_reg'] = $('#first_reg').val();
     form.value['license_expire'] = $('#license_expire').val();
-    form.value['ids'] = this.vehicleSrv.iDsInfo.id;
-    this.vehicleSrv.generalInfo = form.value;
-    //const req = this.vehicleSrv.createOrUpdate('/vehicles/info/', '/vehicles/general_edit/', form.value);
-    // http request
-    // req.subscribe(
-    //   (data) => {
-    //     console.log(data);
-    //   },
-    //   (error) => {
-    //     console.log(error);
-    //   });
+    const pk = this.activeRoute.snapshot.paramMap.get('id');
+    form.value['ids'] = pk;
+    this.vehicleSrv.vehicleAllInfo.vehicle_info = form.value;
   }
 }

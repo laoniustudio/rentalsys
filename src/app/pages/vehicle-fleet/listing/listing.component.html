@@ -63,7 +63,7 @@
     <!-- Color Column -->
     <ng-container matColumnDef="Edit">
       <th mat-header-cell *matHeaderCellDef mat-sort-header="edit"> Edit </th>
-      <td mat-cell *matCellDef="let row" > <button class="btn btn-primary" (click)="edit(row.id)">Edit</button> </td>
+      <td mat-cell *matCellDef="let row" > <button class="btn btn-primary" (click)="edit(row.id)" id="loading">Edit</button> </td>
     </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import {CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, CanActivateChild, NavigationEnd, Router} from '@angular/router';
 import { Observable } from 'rxjs';
 import {VehicleSrvService} from "../../services/vehicle/vehicle-srv.service";
-import {VehicleIdInfo} from "../interfaces/vehicles";
+import {VehicleAllInfo, VehicleIdInfo} from '../interfaces/vehicles';
 import {GeneralSrvService} from '../../services/general-srv.service';
 
 @Injectable({
@@ -18,11 +18,10 @@ export class NewVehicleGuard implements CanActivate {
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
-    const IdsInfo: VehicleIdInfo = this.vehicleSrv.iDsInfo;
-    if (IdsInfo ? IdsInfo.id : IdsInfo) {
+    const pk = this.vehicleSrv.vehicleAllInfo.id;
+    if (pk) {
       return true;
     } else {
-      console.log(next)
       return false;
     }
   }
